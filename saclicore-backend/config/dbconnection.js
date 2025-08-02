@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const conn = async () => {
   try {
     mongoose.connection.on("connected", () => {
-      console.log("DB Connected");
+      console.log("✅ Database Connected Successfully");
     });
     await mongoose.connect(`${process.env.MONGO_URI}/saclicore`);
   } catch (error) {

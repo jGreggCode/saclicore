@@ -80,9 +80,11 @@ const registerUser = async (req, res) => {
 
     const user = await newUser.save();
 
-    const token = createToken(user._id);
-
-    res.json({ success: true, newUser, token });
+    res.status(201).json({
+      success: true,
+      message: "User registered successfully",
+      user,
+    });
   } catch (error) {
     console.error(
       "Error in registerUser Function (userController.js) - Line 37",
